@@ -14,7 +14,7 @@ const ForgotPassword = () => {
   // Step 1: send OTP
   const sendOTP = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+      const res = await axios.post('https://auth-system50.onrender.com/api/auth/forgot-password', { email });
       if (res.data.success) {
         alert(res.data.message);
         setStep(2);
@@ -27,7 +27,7 @@ const ForgotPassword = () => {
   // Step 2: verify OTP
   const verifyOTP = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/forgot-password/verify-otp', { email, otp });
+      const res = await axios.post('https://auth-system50.onrender.com/api/auth/forgot-password/verify-otp', { email, otp });
       if (res.data.success) {
         alert(res.data.message);
         setStep(3);
@@ -41,7 +41,7 @@ const ForgotPassword = () => {
   const resetPassword = async () => {
     if (password !== confirmPassword) return alert('Passwords do not match!');
     try {
-      const res = await axios.put('http://localhost:5000/api/auth/forgot-password/reset', { email, password });
+      const res = await axios.put('https://auth-system50.onrender.com/api/auth/forgot-password/reset', { email, password });
       if (res.data.success) {
         alert(res.data.message);
         setStep(1);
