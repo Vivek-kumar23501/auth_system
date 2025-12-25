@@ -18,7 +18,7 @@ const Signup = () => {
 
   const sendOTP = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/send-otp", {
+      const res = await axios.post("https://auth-system50.onrender.com/api/auth/send-otp", {
         name: form.name,
         email: form.email,
       });
@@ -33,7 +33,7 @@ const Signup = () => {
 
   const verifyOTP = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/verify-otp", {
+      const res = await axios.post("https://auth-system50.onrender.com/api/auth/verify-otp", {
         email: form.email,
         otp: form.otp,
       });
@@ -51,7 +51,7 @@ const Signup = () => {
       return alert("Passwords do not match!");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      const res = await axios.post("https://auth-system50.onrender.com/api/auth/register", {
         name: form.name,
         email: form.email,
         phone: form.phone,
