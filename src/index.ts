@@ -1,0 +1,1 @@
+console.log("type script ready to work ")
